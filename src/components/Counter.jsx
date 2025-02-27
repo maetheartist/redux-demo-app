@@ -6,7 +6,6 @@ import { CounterContext } from "../context/CounterContext";
 export default function Counter() {
   const reduxCount = useSelector((state) => state.counter.value);
   const dispatch = useDispatch();
-
   const {
     count,
     increment: contextIncrement,
@@ -19,10 +18,9 @@ export default function Counter() {
       <h1 className="text-3xl font-bold text-gray-700">Counter App</h1>
 
       <div className="grid grid-cols-2 gap-10">
+      
         <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-          <h2 className="text-xl font-semibold text-gray-700 mb-4">
-            Redux Counter
-          </h2>
+          <h2 className="text-xl font-semibold text-gray-700 mb-4">Redux Counter</h2>
           <p className="text-3xl font-bold text-blue-600">{reduxCount}</p>
           <div className="flex gap-4 mt-4">
             <button
@@ -32,6 +30,7 @@ export default function Counter() {
               Increment
             </button>
             <button
+                className="p-1"
               onClick={() => dispatch(decrement())}
               className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
             >
@@ -46,10 +45,9 @@ export default function Counter() {
           </div>
         </div>
 
+      
         <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-          <h2 className="text-xl font-semibold text-gray-700 mb-4">
-            Context API Counter
-          </h2>
+          <h2 className="text-xl font-semibold text-gray-700 mb-4">Context API Counter</h2>
           <p className="text-3xl font-bold text-purple-600">{count}</p>
           <div className="flex gap-4 mt-4">
             <button
